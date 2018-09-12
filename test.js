@@ -9,5 +9,5 @@ let rawData = "let's have a try, this is a text that not encrypted";
     let base62Data = BufferBase62.toBase62(bufferRawData);
     console.log('base62Data', base62Data);
     let restoreData = BufferBase62.fromBase62(base62Data);
-    console.log('restoreData', restoreData);
+    console.log('restoreData', restoreData.toString('utf-8'));
 }
