@@ -1,0 +1,29 @@
+{
+  "name": "buffer-base62",
+  "version": "0.1.0",
+  "description": "This library will transform the binary buffer to base62 string that used 62 character to describe any data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamcreated/buffer-base62.git"
+  },
+  "keywords": [
+    "base62",
+    "buffer",
+    "encryption"
+  ],
+  "author": "Li Da",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dreamcreated/buffer-base62/issues"
+  },
+  "homepage": "https://github.com/dreamcreated/buffer-base62#readme",
+  "dependencies": {
+    "big-number": "^1.0.0",
+    "buffer-reverse": "^1.0.1",
+    "underscore": "^1.9.1"
+  }
+}
