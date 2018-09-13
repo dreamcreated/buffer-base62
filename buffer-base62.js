@@ -100,13 +100,7 @@ function fromBase62(str) {
 BufferBase62.fromBase62 = fromBase62;
 
 function toBase62(buffer) {
-    let number = BigNumber(0);
-    for (let offset = 0; offset < buffer.length; offset++) {
-        let curNum = buffer.readUInt8(offset);
-        let pos = buffer.length-offset-1;
-        number = number.plus(BigNumber(256).pow(pos).multiply(curNum));
-    }
-
+    let number = toBigNumber(buffer);
     let outArray = new Array();
 	while (number.gt(61)) {
 		let cur = number.mod(62);
@@ -117,3 +111,14 @@ function toBase62(buffer) {
 	return outArray.join('');
 }
 BufferBase62.toBase62 = toBase62;
+
+function toBigNumber(buffer) {
+    let number = BigNumber(0);
+    for (let offset = 0; offset < buffer.length; offset++) {
+        let curNum = buffer.readUInt8(offset);
+        let pos = buffer.length-offset-1;
+        number = number.plus(BigNumber(256).pow(pos).multiply(curNum));
+    }
+    return number;
+}
+BufferBase62.toBigNumber = toBigNumber;
