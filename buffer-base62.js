@@ -79,6 +79,17 @@ let m_base62MappingRev = new Map(
     ['z' , 61]]
 );
 
+function setBase62Mapping(arrayMapping) {
+    m_base62Mapping = arrayMapping;
+    m_base62MappingRev = new Map();
+    for (let i = 0; i < m_base62Mapping.length; i++) {
+        m_base62MappingRev.set(m_base62Mapping[i], i);
+    }
+}
+
+BufferBase62.setBase62Mapping = setBase62Mapping;
+
+
 function fromBase62(str) {
     let number = BigNumber(0);
     for (let i = 0; i < str.length; i++) {
